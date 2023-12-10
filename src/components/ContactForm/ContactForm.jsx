@@ -1,7 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import * as contactsSelectors from '../../redux/selectors';
-
 import {
   PhonebookWrap,
   FormButton,
@@ -10,9 +8,10 @@ import {
 } from './ContactForm.styled';
 import { useState } from 'react';
 import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 
 export default function ContactForm() {
-  const contacts = useSelector(contactsSelectors.selectContacts);
+  const contacts = useSelector(selectContacts);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 

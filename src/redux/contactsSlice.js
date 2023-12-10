@@ -55,7 +55,6 @@ export const contactsSlice = createSlice({
         const index = state.contacts.findIndex(
           contact => contact.id === action.payload.id
         );
-        console.log('Edit index:', index);
       })
       .addCase(editContact.rejected, handleRejected);
   },

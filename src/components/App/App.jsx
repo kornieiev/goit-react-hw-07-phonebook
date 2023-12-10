@@ -18,19 +18,21 @@ export default function App() {
 
   return (
     <MainWrap>
-      <h1>Phonebook-HW-7</h1>
-      <ContactForm />
-      {contacts.contacts ? (
-        <div>
-          <h2>Contacts</h2>
-          <hr />
-          <Filter />
-          <hr />
-          <ContactList />
-        </div>
-      ) : (
-        <p>You haven't any contact</p>
-      )}
+      <>
+        <h1>Phonebook-HW-7</h1>
+        <ContactForm />
+        {contacts.contacts.length > 0 ? (
+          <div>
+            <h2>Contacts</h2>
+            <hr />
+            <Filter />
+            <hr />
+            <ContactList />
+          </div>
+        ) : (
+          <p>You haven't any contact</p>
+        )}
+      </>
     </MainWrap>
   );
 }

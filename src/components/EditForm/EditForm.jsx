@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as contactsSelectors from '../../redux/selectors';
 import {
   SaveButton,
   CancelButton,
@@ -10,9 +9,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { editContact, fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
+import { selectContacts } from 'redux/selectors';
 
 export default function EditForm(props) {
-  const contacts = useSelector(contactsSelectors.selectContacts);
+  const contacts = useSelector(selectContacts);
 
   const [editName, setEditName] = useState(props.item.name);
   const [editNumber, setEditNumber] = useState(props.item.number);
