@@ -52,7 +52,10 @@ export const contactsSlice = createSlice({
       .addCase(editContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.contacts.findIndex(contact => contact.id === action.payload.id);
+        const index = state.contacts.findIndex(
+          contact => contact.id === action.payload.id
+        );
+        state.contacts.splice(index, 1, action.payload);
       })
       .addCase(editContact.rejected, handleRejected);
   },
